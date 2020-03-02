@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
+
+html, body
+{
+  height: 100%;
+  margin: 0;
+}
+.img
+{
+  position: relative;
+  height: 100%;
+  /* attr data-type doesn't work anywhere for the moment :( */
+  /* Even in chrome canary */
+  /* So we do it the JS way */
+  background-image: attr(data-img url); /* Keep it anyway */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 3px solid white;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  color: rgba(255,255,255,0.85);
+  text-stroke: 1.5px rgba(0,0,0,0.7);
+  cursor: default;
+}
+.img:last-of-type
+{
+  border-bottom: none;
+}
+.img:before
+{
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.multiline
+{
+  display: inline-block;
+}
+.max
+{
+  display: block;
+  font-size: 60px;
+  letter-spacing: 1px;
+}
+.img .permalink
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: url(https://i.imgur.com/wdQCy4F.png) center no-repeat;
+  opacity: .2;
+  transition: opacity .5s;
+}
+.img .permalink:hover
+{
+  opacity: 1;
+}
